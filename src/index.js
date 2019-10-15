@@ -1,5 +1,7 @@
 const button = document.getElementById('create-new-task-button');
 const deleteButtons = document.getElementsByClassName('delete-button');
+const menu = document.getElementById('priority-menu')
+
 
 button.addEventListener('click', addItemToList);
 
@@ -18,6 +20,20 @@ function addItemToList() {
   newButton.addEventListener('click', () => {
     newButton.parentElement.parentElement.removeChild(newButton.parentElement);
   });
+
+
+  changeTextColor(li, menu.selectedIndex)
+  
+}
+
+function changeTextColor(item, index) {
+  if(index === 1) {
+    item.style.color = "red";
+  } else if(index === 2) {
+    item.style.color = "yellow";
+  } else if(index === 3) {
+    item.style.color = "green";
+  } 
 }
 
 
