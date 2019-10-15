@@ -1,4 +1,5 @@
 const button = document.getElementById('create-new-task-button');
+const deleteButtons = document.getElementsByClassName('delete-button');
 
 button.addEventListener('click', addItemToList);
 
@@ -13,8 +14,11 @@ function addItemToList() {
   ul.appendChild(li);
   li.innerText = document.getElementById('new-task-description').value;
   li.appendChild(newButton)
-}
 
+  newButton.addEventListener('click', () => {
+    newButton.parentElement.parentElement.removeChild(newButton.parentElement);
+  });
+}
 
 
 document.addEventListener("DOMContentLoaded", () => {
