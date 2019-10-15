@@ -10,11 +10,12 @@ function addItemToList() {
   let li = document.createElement('li');
   li.className = 'task-item'
   let newButton = document.createElement('button');
+  let dueDate = document.getElementById('new-task-due-date').value;
   newButton.className = 'delete-btn';
   newButton.innerText = 'X';
 
   ul.appendChild(li);
-  li.innerText = document.getElementById('new-task-description').value;
+  li.innerText = document.getElementById('new-task-description').value + ` (due ${dueDate})`
   li.appendChild(newButton)
 
   newButton.addEventListener('click', () => {
